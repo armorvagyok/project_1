@@ -1,0 +1,30 @@
+[
+    {
+        "id": 0,
+        "user": "armorvagyok",
+        "avatar": "https://assets.mycast.io/characters/darwin-watterson-276552-normal.jpg?1669272555",
+        "introduction": "yes very yes this is introduction",
+        "genres": ["EDM", "Future House", "Future Bounce", "Triplet House", "Future Bass"]
+    },
+    {
+        "id": 1,
+        "user": "krstf117",
+        "avatar": "https://media.discordapp.net/attachments/760173382603505694/1207782274045706270/ad79c17dcd93897b05bfbe4f1a0eed87.webp?ex=65e0e5e5&is=65ce70e5&hm=40cd6ba69ef862c63914efa0a130bb0270b8c836d3c5bd5d1a0e8f11d8950e67&=&format=webp",
+        "introduction": "introdukció",
+        "genres": ["Hip Hop", "Chill"]
+    },
+    {
+        "id": 2,
+        "user": "bandi",
+        "avatar": "https://media.discordapp.net/attachments/760173382603505694/1207782153446760521/ca7bce0726a224b79243b3544e447b4b.webp?ex=65e0e5c8&is=65ce70c8&hm=c94934a94836205631527f2342c6860476e043ae6d6599cec6155f4aaf53da5c&=&format=webp",
+        "introduction": "a kurva anyád",
+        "genres": ["Trap", "Pop", "Hip Hop"]
+    },
+    {
+        "id" : 4,
+        "user": "mikewilliams",
+        "avatar": "https://djmag.com/sites/default/files/top100/djs/image/70.%20Mike%20Williams.jpeg",
+        "introduction": "Top 100 DJ 2021-2024 (DJ Mag), performed at Tomorrowland, DLDK, Parookaville",
+        "genres": ["EDM", "Future House", "Future Bounce", "Bass House"]
+    }
+]
