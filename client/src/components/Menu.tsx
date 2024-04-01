@@ -7,6 +7,7 @@ export default function Menu() {
         <a className="postbt" href={`/posts`} color="#00B86B"><b>Posts</b></a>
         <a className="profilebt" href={`/profile`}><b>Profile</b></a>
         <a className="loginbt" href={`/login`}><b>Login</b></a>
+        <a className="friendsbt" href={`/Friends`}><b>Friends</b></a>
 
         <br/>
         </>
