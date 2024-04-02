@@ -10,7 +10,7 @@ use App\Http\Controllers\FollowController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\MessageController;
 use App\Http\Controllers\TagController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\AuthController;
 
 Route::group(['prefix' => 'posts'], function() {
     Route::get("/", [PostController::class, "get"]);
@@ -68,4 +68,9 @@ Route::group(['prefix' => 'tags'], function() {
     Route::get("/search", [TagController::class, "search"]);
 });
 
-Route::get("/", [LoginController::class, "get"]);
+Route::post("/login", [AuthController::class, "login"]);
+
+Route::middleware('auth:sanctum')->group(function() {
+    Route::get("/user", [AuthController::class, "user"]);
+    Route::post("/logout", [AuthController::class, "logout"]);
+});
