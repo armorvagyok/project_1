@@ -10,14 +10,6 @@ use Illuminate\Support\Facades\Cookie;
 
 class AuthController extends Controller
 {
-    /*public function register(Request $request) {
-        return $user = user::create([
-            'name' => $request->input('name'),
-            'email' => $request->input('email'),
-            'password' => Hash::make($request->input('password'))
-        ]);
-    }*/
-
     public function login(Request $request) {
         if(!Auth::attempt($request->only('email', 'password'))) {
             return response([
