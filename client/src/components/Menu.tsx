@@ -7,6 +7,7 @@ export default function Menu() {
         <a className="postbt buttonwrapper" href={`/posts`} color="#00B86B"><b>Posts</b></a>
         <a className="profilebt buttonwrapper" href={`/profile`}><b>Profile</b></a>
         <a className="loginbt buttonwrapper" href={`/login`}><b>Login</b></a>
+        <a className="friendsbt buttonwrapper" href={`/Friends`}><b>Friends</b></a>
         <br/>
         </>
     )
