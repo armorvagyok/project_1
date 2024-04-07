@@ -61,37 +61,45 @@
 
 .postbt{
   float: right;
-  margin-top: -3%;
+  margin-top: -5%;
   width: 70px;
   text-decoration: none;
   color: white;
+  padding: 5px;
+  text-align: center;
 }
 
 .profilebt{
   float: right;
-  margin-top: -3%;
+  margin-top: -5%;
   margin-right: 8%;
   width: 70px;
   text-decoration: none;
   color: white;
+  padding: 5px;
+  text-align: center;
 }
 
 .homebt{
   float: right;
-  margin-top: -3%;
+  margin-top: -5%;
   margin-right: 16%;
   width: 70px;
   text-decoration: none;
   color: white;
+  padding: 5px;
+  text-align: center;
 }
 
 .loginbt{
   float: right;
-  margin-top: -3%;
+  margin-top: -5%;
   margin-right: 24%;
   width: 70px;
   text-decoration: none;
   color: white;
+  padding: 5px;
+  text-align: center;
 }
 
 nextjs-portal {
@@ -291,4 +299,33 @@ i{
 .NotTitle{
   margin-top: -20px;
   margin-left: -10%;
+}
+
+.titlewrapper{
+  width: 350px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .1);
+  backdrop-filter: blur(30px) ;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 15px 20px;
+  background:
+  linear-gradient(
+    rgba(0, 0, 0, 0.4), 
+    rgba(0, 0, 0, 0.4)
+  )
+}
+
+.buttonwrapper{
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, .1);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  background:
+  linear-gradient(
+    rgba(0, 0, 0, 0.4), 
+    rgba(0, 0, 0, 0.4)
+  );
+  align-content: center;
 }
