@@ -1,15 +1,28 @@
-import Menu from '@/components/Menu'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Container, Image } from 'react-bootstrap'
-import { User } from "@/interfaces/user"
-import post from '@/data/posts.json'
+import ProfilePage from "@/components/ProfilePage"
+import axios from "axios"
+import { Row, Col,  } from "react-bootstrap"
+import use from "react"
 
-export default function Profile({ user } : {user : User}) {
+async function getUser() {
+    return await axios.get(`http://localhost/project_1/server/public/api/user`)
+}
+
+export default function Update({ params } : {
+    params: {
+        user: string
+    }
+}) {
+    const user = use(getUser()).data
     return(
-        <div className="background bgh">
-            <Container>
-                <Menu/>
-            </Container>
-        </div>
+        <Row>
+            <Col>
+                <ProfilePage 
+                    user={params.user}
+                    name={user.name}
+                    email={user.email}
+                    description={user.description}
+                />
+            </Col>
+        </Row>
     )
 }
