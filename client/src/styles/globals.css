@@ -62,6 +62,7 @@
 .postbt{
   float: right;
   margin-top: -5%;
+  margin-right: 32%;
   width: 70px;
   text-decoration: none;
   color: white;
@@ -91,7 +92,7 @@
   text-align: center;
 }
 
-.loginbt{
+.friendsbt{
   float: right;
   margin-top: -5%;
   margin-right: 24%;
@@ -101,6 +102,15 @@
   padding: 5px;
   text-align: center;
 }
+
+.loginbt{
+  float: right;
+  margin-top: -3%;
+  width: 70px;
+  text-decoration: none;
+  color: white;
+}
+
 
 nextjs-portal {
   display: none;
