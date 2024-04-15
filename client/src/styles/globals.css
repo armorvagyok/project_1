@@ -1,4 +1,3 @@
-
 .Hbody{
  margin-top: 0%;
   justify-content: center;
@@ -7,8 +6,7 @@
   background-size: cover;
   background-position: center;
   min-height: 100vh;
-  background-image: url('https://www.pixel4k.com/wp-content/uploads/2019/12/music-melody-abstract_1575661251.jpg.webp');
-
+  background-image: url('/images/img.jpg');
 }
  
 .background{
@@ -73,7 +71,7 @@
 .profilebt{
   float: right;
   margin-top: -5%;
-  margin-right: 8%;
+  margin-right: 16%;
   width: 70px;
   text-decoration: none;
   color: white;
@@ -84,17 +82,6 @@
 .homebt{
   float: right;
   margin-top: -5%;
-  margin-right: 16%;
-  width: 70px;
-  text-decoration: none;
-  color: white;
-  padding: 5px;
-  text-align: center;
-}
-
-.friendsbt{
-  float: right;
-  margin-top: -5%;
   margin-right: 24%;
   width: 70px;
   text-decoration: none;
@@ -103,19 +90,21 @@
   text-align: center;
 }
 
-.loginbt{
+.logoutbt{
   float: right;
-  margin-top: -3%;
+  margin-top: -5%;
+  margin-right: 8%;
   width: 70px;
   text-decoration: none;
   color: white;
+  padding: 5px;
+  text-align: center;
 }
 
-
-nextjs-portal {
+/*nextjs-portal {
   display: none;
   scroll-behavior: smooth;
-}
+}*/
 
 
 .pfp{
@@ -157,13 +146,13 @@ nextjs-portal {
   margin-left: 8%;
   padding-bottom: 10px;
 }
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
 
 .loginBody{
   display: flex;
@@ -224,7 +213,6 @@ nextjs-portal {
   font-size: 20px;
 }
 
-
 .wrapper .remember-forgot{
   display: flex;
   justify-content: space-between;
@@ -236,6 +224,7 @@ nextjs-portal {
   accent-color: #fff;
   margin-right: 3px;
 }
+
 .remember-forgot  a{
   color: #fff;
   text-decoration:none;
@@ -279,13 +268,14 @@ nextjs-portal {
 .Fpw{
     float:right;
 }
+
 .Noti{
   margin-left: 21.5%;
   margin-top: 10%;
-
   justify-content: center;
   align-items: center;
 }
+
 .notimargo{
   width: 420px;
   background: transparent;
@@ -312,7 +302,7 @@ i{
 }
 
 .titlewrapper{
-  width: 350px;
+  width: 310px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, .1);
   backdrop-filter: blur(30px) ;
