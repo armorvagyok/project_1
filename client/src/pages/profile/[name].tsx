@@ -1,7 +1,7 @@
 import ProfilePage from "@/components/ProfilePage"
 import axios from "axios"
-import { Row, Col,  } from "react-bootstrap"
-import use from "react"
+import { Row, Col } from "react-bootstrap"
+import { use } from "react"
 
 async function getUser() {
     return await axios.get(`http://localhost/project_1/server/public/api/user`)

@@ -25,7 +25,6 @@ export default function ProfilePage({
                     <Col>
                         <Form onSubmit={(event) => {
                             event.preventDefault();
-
                             const form = event.target;
 
                             axios.put(`http://localhost/project_1/server/public/api/users/update/${user}`, {
