@@ -1,5 +1,5 @@
 .Hbody{
- margin-top: 0%;
+  margin-top: 0%;
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
@@ -10,7 +10,10 @@
 }
  
 .background{
-  background-color: #333;
+  background-image: url('/images/img.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .username{
@@ -60,7 +63,7 @@
 .postbt{
   float: right;
   margin-top: -5%;
-  margin-right: 32%;
+  margin-right: 24%;
   width: 70px;
   text-decoration: none;
   color: white;
@@ -79,10 +82,10 @@
   text-align: center;
 }
 
-.homebt{
+.logoutbt{
   float: right;
   margin-top: -5%;
-  margin-right: 24%;
+  margin-right: 8%;
   width: 70px;
   text-decoration: none;
   color: white;
@@ -90,10 +93,10 @@
   text-align: center;
 }
 
-.logoutbt{
+.searchbt{
   float: right;
   margin-top: -5%;
-  margin-right: 8%;
+  margin-right: 32%;
   width: 70px;
   text-decoration: none;
   color: white;
