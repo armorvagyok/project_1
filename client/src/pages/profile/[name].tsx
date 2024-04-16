@@ -15,6 +15,7 @@ export default function Update({ params } : {
     const user = use(getUser()).data
     return(
         <Row>
+            <title>NOTEHOUSE - Profile</title>
             <Col>
                 <ProfilePage 
                     user={params.user}

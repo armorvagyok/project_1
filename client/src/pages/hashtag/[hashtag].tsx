@@ -5,6 +5,7 @@ import Menu from "@/components/Menu";
 export default function Hashtag() {
     return(
         <body>
+            <title>NOTEHOUSE - Hashtag</title>
             <div className="background bgh">
                 <Container>
                     <Menu/>
