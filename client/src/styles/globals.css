@@ -10,10 +10,14 @@
 }
  
 .background{
-  background-image: url('/images/img.jpg');
+  margin-top: 0%;
+  justify-content: center;
+  align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  min-height: 100vh;
+  background-image: url('/images/img.jpg');
 }
 
 .username{
