@@ -13,7 +13,7 @@ export default function Update({ params } : {
         user: string
     }
 }) {
-    const user = use(getUser()).data
+    const user = use(getUser()).data;
     return(
         <Row>
             <title>NOTEHOUSE - Profile</title>

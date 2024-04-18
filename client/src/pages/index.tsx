@@ -1,14 +1,19 @@
 import { Inter } from 'next/font/google'
 import PostCard from '@/components/PostCard'
-import post from '@/data/posts.json'
-import { Post } from '@/interfaces/post'
 import Menu from '@/components/Menu'
 import { Container, Col } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { use } from 'react'
+import axios from 'axios'
 
 const inter = Inter({ subsets: ['latin'] })
 
+async function get() {
+    return await axios.get("localhost/project_1/server/public/api/posts")
+}
+
 export default function Home() {
+    const posts = use(get()).data;
     return(
         <div className="background">
             <title>NOTEHOUSE - Posts</title>
@@ -16,7 +21,7 @@ export default function Home() {
                 <Menu/>
                 <Col>
                     <div className="cardouter">
-                        {post && post.map((post: Post) => (
+                        {posts && posts.map(post => (
                             <PostCard post={post}/>
                         ))}
                     </div>
