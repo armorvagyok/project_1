@@ -1,3 +1,5 @@
+"use client";
+
 import { Post } from '@/interfaces/post'
 import { Card, Container, Button, Image } from 'react-bootstrap'
 import ReactPlayer from 'react-player'
@@ -23,6 +25,7 @@ export default function PostCard({ post } : {post : Post}) {
             </Card.Footer>
         </Card>
     )
+
     function URLRender() {
         if (post.url.includes("https://soundcloud.com/")) {
             return <ReactPlayer url={post.url} width={900} height={150}/>
@@ -30,11 +33,13 @@ export default function PostCard({ post } : {post : Post}) {
             return null
         } else return <ReactPlayer url={post.url} height={200} />
     }
+
     function Tag(tag: string) {
         return(
             <a className="tag" href={`/hashtag/${tag}`}>#{tag} </a>
         )
     }
+    
     function ShareRender() {
         if (post.url === "" || post.url === null) {
             return <></>

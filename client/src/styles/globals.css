@@ -310,9 +310,9 @@ i{
   margin-top: -20px;
   margin-left: -10%;
 }
-/*
+
 .titlewrapper{
-  width: 310px;
+  width: 300px;
   background: transparent;
   border: 2px solid rgba(255, 255, 255, .1);
   backdrop-filter: blur(2px);
@@ -339,18 +339,35 @@ i{
   );
   align-content: center;
 }
-*/
+
 a {
   cursor: pointer;
 }
 
-.navBar{
+/*.navBar{
   border-radius: 10px;
   backdrop-filter: blur(20px) ;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
   background: linear-gradient(
     rgba(0, 0, 0, 0.5), 
     rgba(0, 0, 0, 0.5)
   );
   border: 2px solid rgba(252, 252, 252, 0.1);
+  align-content: center;
+}*/
+
+.createcard {
+  margin: 20px;
+}
+
+.createbutton {
+  width: 70px;
+  text-decoration: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+}
+
+.textinput {
+  height: 100px;
 }
