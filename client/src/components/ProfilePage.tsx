@@ -28,6 +28,7 @@ export default function ProfilePage({
                             const form = event.target;
 
                             axios.put(`http://localhost/project_1/server/public/api/users/update/${user}`, {
+                                user: form.user.value,
                                 name: form.name.value,
                                 email: form.email.value,
                                 description: form.description.value
@@ -37,18 +38,15 @@ export default function ProfilePage({
                         }}>
                             <Form.Group>
                                 <Form.Label>Username</Form.Label>
-                                <Form.Control type="number" name="username" defaultValue={name}>
-                                </Form.Control>
+                                <Form.Control type="number" name="username" defaultValue={name}/>
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>E-mail Address</Form.Label>
-                                <Form.Control type="number" name="email" defaultValue={email}>
-                                </Form.Control>
+                                <Form.Control type="number" name="email" defaultValue={email}/>
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>Description</Form.Label>
-                                <Form.Control type="number" name="desc" defaultValue={description} height={150}>
-                                </Form.Control>
+                                <Form.Control type="number" name="desc" defaultValue={description} height={150}/>
                             </Form.Group>
                         </Form>
                     </Col>
