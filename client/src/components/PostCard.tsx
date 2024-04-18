@@ -25,6 +25,7 @@ export default function PostCard({ post } : {post : Post}) {
             </Card>
         </Container>
     )
+
     function URLRender() {
         if (post.url.includes("https://soundcloud.com/")) {
             return <ReactPlayer url={post.url} width={900} height={150}/>
@@ -32,11 +33,13 @@ export default function PostCard({ post } : {post : Post}) {
             return null
         } else return <ReactPlayer url={post.url} width={900} />
     }
+
     function Tag(tag: string) {
         return(
             <a className="tag" href={`/hashtag/${tag}`}>#{tag} </a>
         )
     }
+    
     function ShareRender() {
         if (post.url === "" || post.url === null) {
             return <></>
