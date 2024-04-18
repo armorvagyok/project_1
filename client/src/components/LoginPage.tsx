@@ -16,9 +16,9 @@ export default function LoginPage() {
             }).then((res) => {
                 router.push("/")
             }).catch(function (AxiosError) {
-                alert(AxiosError + "\nRossz e-mail vagy jelszó")
+                alert(AxiosError + "\nInvalid credentials")
             }).catch(function (error) {
-                alert("Hiba\n" + error.message)
+                alert(error.message)
             })
         }}>
 

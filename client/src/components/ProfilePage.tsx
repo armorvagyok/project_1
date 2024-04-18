@@ -32,7 +32,7 @@ export default function ProfilePage({
                                 email: form.email.value,
                                 description: form.description.value
                             }).then((res) => {
-                                alert("Sikeres mentés")
+                                alert("User details updated")
                             })
                         }}>
                             <Form.Group>
