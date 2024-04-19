@@ -1,19 +1,23 @@
-import { Inter } from 'next/font/google'
+"use client";
+
 import PostCard from '@/components/PostCard'
 import Menu from '@/components/Menu'
 import { Container, Col } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { use } from 'react'
+import { use, useEffect, useState } from 'react'
 import axios from 'axios'
 
-const inter = Inter({ subsets: ['latin'] })
-
-async function get() {
-    return await axios.get("localhost/project_1/server/public/api/posts")
-}
-
 export default function Home() {
-    const posts = use(get()).data;
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const result = await axios("http://localhost/project_1/server/public/api/posts");
+            setData(result.data);
+        };
+        fetchData();
+    }, []);
+
     return(
         <div className="background">
             <title>NOTEHOUSE - Posts</title>
@@ -21,8 +25,8 @@ export default function Home() {
                 <Menu/>
                 <Col>
                     <div className="cardouter">
-                        {posts && posts.map(post => (
-                            <PostCard post={post}/>
+                        {data.map(post => (
+                            <PostCard key={post.id} post={post}/>
                         ))}
                     </div>
                 </Col>
