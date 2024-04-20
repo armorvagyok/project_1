@@ -1,3 +1,5 @@
+"use client";
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import LoginPage from "@/components/LoginPage"
 

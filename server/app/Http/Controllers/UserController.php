@@ -9,7 +9,7 @@ use App\Http\Requests\StoreUsers;
 class UserController extends Controller
 {
     public function get() {
-        $users = User::all();
+        $users = User::with("follow1")->get();
         return response()->json($users);
     }
 
