@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('text');
-            $table->string('url');
+            $table->string('url')->nullable();
             $table->foreignId('user_id');
             $table->timestamps();
 

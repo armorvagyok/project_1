@@ -1,25 +1,31 @@
 import { Col, Container, Form, Row, Button } from "react-bootstrap"
 import axios, { AxiosError } from "axios"
 import { useRouter } from "next/navigation"
+import { useEffect, useState } from "react";
 
 export default function LoginPage() {
-    const router = useRouter()
+    const router = useRouter();
+    const [data, setData] = useState([]);
+
+    const Submit = useEffect(() => {
+        axios.post(`http://localhost/project_1/server/public/api/login`, {
+                email: form.email.value,
+                password: form.password.value
+            }).then((res) => {
+                router.push("/profile")
+            }).catch(function (AxiosError) {
+                alert(AxiosError + "\nInvalid credentials")
+            }).catch(function (error) {
+                alert(error.message)
+            })
+    })
 
     return(
         <Form className="wrapper" onSubmit={(event) => {
             event.preventDefault();
             const form = event.target;
 
-            axios.post(`http://localhost/project_1/server/public/api/login`, {
-                email: form.email.value,
-                password: form.password.value
-            }).then((res) => {
-                router.push("/")
-            }).catch(function (AxiosError) {
-                alert(AxiosError + "\nInvalid credentials")
-            }).catch(function (error) {
-                alert(error.message)
-            })
+            
         }}>
 
         <h1 className="h1">Login</h1>
@@ -48,5 +54,7 @@ export default function LoginPage() {
                 <p>Don't have an account? <a href={`/register`}>Register</a></p>
             </div>
         </Form>
+
+        
     )
 }

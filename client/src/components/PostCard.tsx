@@ -1,22 +1,28 @@
-import { Card, Container, Button, Image } from 'react-bootstrap'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
+import { Card, Container, Image } from 'react-bootstrap'
 import ReactPlayer from 'react-player'
 
-export default function PostCard({ 
+export default function PostCard({
     title,
     text,
     url,
     user_id
- } : {
+} : {
     title: string,
-    text: Text,
+    text: string,
     url: string,
     user_id: number
- }) {
+}) {
     return(
         <Container>
             <Card className="card mb-3">
                 <Card.Body>
-                    <Card.Text><a className="username" href={`/profile/${user_id}`}>@{user_id}</a></Card.Text>
+                    {User().map(user => {
+                        if(user.id === user_id) {
+                            return <Card.Text><a className="username" href={`/profile/${user.name}`}>@{user.name}</a></Card.Text>
+                        } else return <Card.Text>unknown_user</Card.Text>
+                    })}
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>{text}</Card.Text>
                     <div className="url">
@@ -33,7 +39,7 @@ export default function PostCard({
     )
 
     function URLRender() {
-        if (url.includes("https://soundcloud.com/")) {
+        if (url.includes("soundcloud.com/")) {
             return <ReactPlayer url={url} width={900} height={150}/>
         } else if (url === null || url === "") {
             return null
@@ -43,6 +49,20 @@ export default function PostCard({
     function ShareRender() {
         if (url === "" || url === null) {
             return <></>
-        } else return <a href={url} className="openlink" color="rgb(0, 184, 107)" target="_blank"><Image width={25} height={25} src="https://media.discordapp.net/attachments/761616483922608158/1178625230927822899/share.png?ex=6576d348&is=65645e48&hm=79c937be92d13a91569826903f6e87f6dd1ce78424531dc3c80595c6c1f6480d&=&format=webp"></Image></a>
+        } else return <a href={url} className="openlink" color="rgb(0, 184, 107)" target="_blank"><Image width={25} height={25} src="C:\laragon\www\project_1\client\public\images\open.png"></Image></a>
+    }
+
+    function User() {
+        const [data, setData] = useState([]);
+
+        useEffect(() => {
+            const fetchData = async () => {
+                const result = await axios("http://localhost/project_1/server/public/api/users");
+                setData(result.data);
+            };
+            fetchData();
+        }, []);
+
+        return data;
     }
 }
