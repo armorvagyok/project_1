@@ -1,28 +1,22 @@
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-import { Card, Container, Image } from 'react-bootstrap'
+import { Card, Container, Button } from 'react-bootstrap'
 import ReactPlayer from 'react-player'
 
 export default function PostCard({
     title,
     text,
     url,
-    user_id
+    username
 } : {
     title: string,
     text: string,
     url: string,
-    user_id: number
+    username: string
 }) {
     return(
         <Container>
             <Card className="card mb-3">
                 <Card.Body>
-                    {User().map(user => {
-                        if(user.id === user_id) {
-                            return <Card.Text><a className="username" href={`/profile/${user.name}`}>@{user.name}</a></Card.Text>
-                        } else return <Card.Text>unknown_user</Card.Text>
-                    })}
+                    <Card.Text><a className="username" href={`/profile/${username}`}>@{username}</a></Card.Text>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>{text}</Card.Text>
                     <div className="url">
@@ -49,20 +43,6 @@ export default function PostCard({
     function ShareRender() {
         if (url === "" || url === null) {
             return <></>
-        } else return <a href={url} className="openlink" color="rgb(0, 184, 107)" target="_blank"><Image width={25} height={25} src="C:\laragon\www\project_1\client\public\images\open.png"></Image></a>
-    }
-
-    function User() {
-        const [data, setData] = useState([]);
-
-        useEffect(() => {
-            const fetchData = async () => {
-                const result = await axios("http://localhost/project_1/server/public/api/users");
-                setData(result.data);
-            };
-            fetchData();
-        }, []);
-
-        return data;
+        } else return <a href={url} className="openlink" color="rgb(0, 184, 107)" target="_blank"><Button>Open Link</Button></a>
     }
 }

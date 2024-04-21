@@ -19,7 +19,12 @@ export default function Profile() {
 
     return(
         <Container>
-            
+            <Menu/>
+            <ProfilePage
+                username={data.name}
+                email={data.email}
+                description={data.description}
+            />
         </Container>
     )
 }

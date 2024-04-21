@@ -4,13 +4,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from "axios"
 
 export default function ProfilePage({
-    user,
-    name,
+    username,
     email,
     description
 }: {
-    user: string,
-    name: string,
+    username: string,
     email: string,
     description: string
 }) {
@@ -19,17 +17,13 @@ export default function ProfilePage({
             <Container className="Profile">
                 <Menu/>
                 <Row>
-                   <Col lg={3}>
-                        <Image src="https://djmag.com/sites/default/files/top100/djs/image/70.%20Mike%20Williams.jpeg" className="pfp"/>
-                    </Col>
                     <Col>
                         <Form onSubmit={(event) => {
                             event.preventDefault();
                             const form = event.target;
 
-                            axios.put(`http://localhost/project_1/server/public/api/users/update/${user}`, {
-                                user: form.user.value,
-                                name: form.name.value,
+                            axios.put(`http://localhost/project_1/server/public/api/users/update/${username}`, {
+                                username: form.username.value,
                                 email: form.email.value,
                                 description: form.description.value
                             }).then((res) => {

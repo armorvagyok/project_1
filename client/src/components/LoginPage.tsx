@@ -5,10 +5,13 @@ import { useEffect, useState } from "react";
 
 export default function LoginPage() {
     const router = useRouter();
-    const [data, setData] = useState([]);
 
-    const Submit = useEffect(() => {
-        axios.post(`http://localhost/project_1/server/public/api/login`, {
+    return(
+        <Form className="wrapper" onSubmit={(event) => {
+            event.preventDefault();
+            const form = event.target;
+
+            axios.post(`http://localhost/project_1/server/public/api/login`, {
                 email: form.email.value,
                 password: form.password.value
             }).then((res) => {
@@ -17,15 +20,10 @@ export default function LoginPage() {
                 alert(AxiosError + "\nInvalid credentials")
             }).catch(function (error) {
                 alert(error.message)
-            })
-    })
+            });
 
-    return(
-        <Form className="wrapper" onSubmit={(event) => {
-            event.preventDefault();
-            const form = event.target;
-
-            
+            console.log(localStorage.getItem('jwt'));
+            alert("asd")
         }}>
 
         <h1 className="h1">Login</h1>
@@ -43,18 +41,10 @@ export default function LoginPage() {
             </Col>
         </Form.Group>
 
-        <Form.Group className="remember-forgot" as={Row}>
-            <Col>
-                <a href="#" className="Fpw" >Forgot password?</a>
-            </Col>
-        </Form.Group>   
-
         <Button type="submit" className="btn">Login</Button>
             <div className="register-link">
                 <p>Don't have an account? <a href={`/register`}>Register</a></p>
             </div>
         </Form>
-
-        
     )
 }

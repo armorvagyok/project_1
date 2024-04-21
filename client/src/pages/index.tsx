@@ -2,7 +2,7 @@
 
 import PostCard from '@/components/PostCard'
 import Menu from '@/components/Menu'
-import { Container, Col } from 'react-bootstrap'
+import { Container, Col, Button } from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
@@ -24,13 +24,14 @@ export default function Home() {
             <Container>
                 <Menu/>
                 <Col>
+                    <Button href='/posts/create'>Create Post</Button>
                     <div className="cardouter">
                         {data.map(post => (
                             <PostCard key={post.id}
                                 title={post.title}
                                 text={post.text}
                                 url={post.url}
-                                user_id={post.user_id}
+                                username={post.user.name}
                             />
                         ))}
                     </div>
