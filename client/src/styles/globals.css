@@ -67,7 +67,7 @@
   float: right;
 }
 
-.postbt{
+/*.postbt{
   float: right;
   margin-top: -5%;
   margin-right: 24%;
@@ -109,7 +109,7 @@
   color: white;
   padding: 5px;
   text-align: center;
-}
+}*/
 
 /*nextjs-portal {
   display: none;
@@ -344,17 +344,10 @@ a {
   cursor: pointer;
 }
 
-/*.navBar{
+.navBar{
   border-radius: 10px;
-  backdrop-filter: blur(20px) ;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.5), 
-    rgba(0, 0, 0, 0.5)
-  );
-  border: 2px solid rgba(252, 252, 252, 0.1);
   align-content: center;
-}*/
+}
 
 .createcard {
   margin: 20px;
@@ -370,4 +363,28 @@ a {
 
 .textinput {
   height: 100px;
+}
+
+.button {
+  color: white !important;
+  height: 40px;
+  margin-top: 18px;
+  padding-right: 20px;
+  background: transparent;
+}
+
+.foot {
+  height: 55px;
+}
+
+.navbuttons {
+  float: right;
+  margin-top: -7%;
+}
+
+.searchform {
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto
 }

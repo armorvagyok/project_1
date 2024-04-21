@@ -10,6 +10,14 @@ use Illuminate\Support\Facades\Cookie;
 
 class AuthController extends Controller
 {
+    public function register(Request $request) {
+        return $user = User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => $request->input('password')
+        ]);
+    }
+
     public function login(Request $request) {
         if(!Auth::attempt($request->only('email', 'password'))) {
             return response([
@@ -21,7 +29,7 @@ class AuthController extends Controller
 
         $token = $user->createToken('token')->plainTextToken;
 
-        $cookie = cookie('jwt', $token, 1440);
+        $cookie = cookie('jwt', $token, 60 * 24);
 
         return response([
             'message' => 'success'
@@ -34,7 +42,6 @@ class AuthController extends Controller
 
     public function logout(Request $request) {
         $cookie = Cookie::forget('jwt');
-        $request->user()->tokens()->delete();
 
         return response([
             'message' => 'success'

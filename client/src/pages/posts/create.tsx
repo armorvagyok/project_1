@@ -40,7 +40,7 @@ export default function CreateForm() {
                                 <Form.Control type="text" name="url"/>
                             </Form.Group>
                             <Form.Group className="mb-3">
-                                <Button className="createbutton buttonwrapper" type="submit">Mentés</Button>
+                                <Button className="createbutton buttonwrapper" type="submit">Post</Button>
                             </Form.Group>
                         </Container>
                     </Card>
